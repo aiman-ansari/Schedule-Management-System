@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "swagger-autogen": "node docs/swagger-autogen.js"
+    "swagger-autogen": "node docs/swagger-autogen.js",
+    "dev": "nodemon"
   },
   "bugs": {
     "url": "https://github.com/growthpal/fe-assignment/issues"
@@ -14,9 +15,11 @@
   "author": "GrowthPal Technologies",
   "license": "MIT",
   "dependencies": {
+    "bson": "^4.7.0",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "mongoose": "^6.3.1",
+    "nodemon": "^2.0.20",
     "swagger-autogen": "^2.21.1",
     "swagger-ui-express": "^4.3.0"
   }
