@@ -1,5 +1,6 @@
 const express = require("express");
 const connectDB = require("./utils/db");
+const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./docs/swagger.json");
 //load env vars
@@ -12,10 +13,18 @@ const userRoutes = require("./routes/user.routes");
 const scheduleRoutes = require("./routes/schedule.routes");
 const roomRoutes = require("./routes/room.routes");
 const app = express();
-
+const port = 5000;
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 //body parser
 app.use(express.json());
-
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   next();
+// });
 // Swagger Documentation
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
@@ -24,8 +33,8 @@ app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/room", roomRoutes);
 app.use("/api/v1/schedule", scheduleRoutes);
 
-const server = app.listen(3000, function () {
-  console.log(`Server running on port 3000`);
+const server = app.listen(port, function () {
+  console.log(`Server running on port ${port}`);
 });
 
 //handle unhandled PromiseRejection
