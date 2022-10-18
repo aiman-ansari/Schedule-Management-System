@@ -11,6 +11,11 @@ export default function Users() {
     const data = res.data;
     setUser(data.data);
   };
+  const deleteUser = async (userId) => {
+    const res = await axios.delete(`/api/v1/users/${userId}`);
+    const getUsers = user.filter((item) => item._id !== res.data.data._id);
+    setUser(getUsers);
+  };
   console.log("users", user);
   return (
     <div>
@@ -36,7 +41,7 @@ export default function Users() {
           </tr>
         </thead>
         <tbody>
-          {user !== null ? (
+          {user !== null && user.length > 0 ? (
             user.map((item, i) => (
               <tr>
                 <td className='pt-3 pb-3'>{i + 1}</td>
@@ -48,7 +53,10 @@ export default function Users() {
                     <button className='btn-primary'>
                       <i className='bi bi-pencil-fill'></i>
                     </button>
-                    <button className='btn-secondary'>
+                    <button
+                      className='btn-secondary'
+                      onClick={() => deleteUser(item.userId)}
+                    >
                       <i className='bi bi-trash-fill'></i>
                     </button>
                   </div>
@@ -56,7 +64,9 @@ export default function Users() {
               </tr>
             ))
           ) : (
-            <></>
+            <>
+              <h4>No user found</h4>
+            </>
           )}
         </tbody>
       </table>
