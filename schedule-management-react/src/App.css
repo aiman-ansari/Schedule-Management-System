@@ -5,7 +5,11 @@
 }
 .form-control {
   width: 20rem;
+  /* box-shadow: 0px 0px 12px 3px rgba(222, 222, 222, 1); */
 }
 .input {
   border-radius: 10px;
+}
+.input::placeholder {
+  color: rgb(183, 183, 174);
 }

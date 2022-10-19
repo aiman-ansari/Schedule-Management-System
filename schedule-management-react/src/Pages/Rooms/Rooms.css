@@ -1,0 +1,47 @@
+.room-container {
+  display: flex;
+  align-items: center;
+  width: 25rem;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: rgb(255, 255, 255);
+  margin: 2rem 0 2rem 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 0px 12px 3px rgba(222, 222, 222, 1);
+}
+.table {
+  border: 1px solid black;
+  width: 35rem;
+}
+.table-row-heading {
+  background-color: rgb(31, 31, 31);
+  color: whitesmoke;
+}
+.table-row-heading,
+.table-row {
+  border-bottom: 1px solid rgb(39, 39, 39);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.table-heading {
+  padding-right: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+.operations {
+  display: flex;
+  gap: 10px;
+}
+.operations button {
+  border: none;
+  height: 30px;
+  border-radius: 5px;
+}
+.operations .bi {
+  padding: 10px;
+  font-weight: bold;
+}
