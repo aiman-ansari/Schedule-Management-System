@@ -1,36 +1,23 @@
 import { useState } from "react";
+import { useRoom } from "../../Context/RoomContext";
 
-export default function UpdateRoom({ room, setOpen }) {
+export default function UpdateRoom({ room }) {
   const [data, setData] = useState(room);
-  const updateUser = async (id) => {
-    const res = await fetch(`/api/v1/room/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    if (res.status === 409) {
-      alert("Room exists, change roomId");
-    }
-    if (res.status === 200) {
-      alert("successfully added");
-      setOpen(false);
-    }
-  };
+  const { updateRoom } = useRoom();
+
   return (
     <div>
       <div className='form-control'>
         <input
           type='text'
-          placeholder='Enter your user Id'
+          placeholder='Enter Room ID'
           className='input'
           value={data.roomId}
           onChange={(e) => setData({ ...data, roomId: e.target.value })}
         />
         <input
           type='text'
-          placeholder='Enter your username'
+          placeholder='Enter Room Name'
           className='input'
           value={data.roomName}
           onChange={(e) => setData({ ...data, roomName: e.target.value })}
@@ -39,7 +26,7 @@ export default function UpdateRoom({ room, setOpen }) {
         <div className='flex-align-center'>
           <button
             className='btn btn-primary mt-1'
-            onClick={() => updateUser(room.roomId)}
+            onClick={() => updateRoom(data)}
           >
             Update Room
           </button>

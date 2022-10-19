@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Users from "./Component/AllUsers/Users";
 import Home from "./Component/Home/Home";
-import AddRoom from "./Pages/Rooms/AddRoom";
+import AddRoom from "./Component/Rooms/AddRoom";
 import Rooms from "./Pages/Rooms/Rooms";
 export const Routers = () => {
   return (
