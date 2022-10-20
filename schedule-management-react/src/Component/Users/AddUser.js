@@ -41,7 +41,7 @@ export default function AddUser() {
         <label for='userId'>User ID :</label>
         <input
           type='text'
-          placeholder='r1'
+          placeholder='1234'
           className='input'
           value={userId}
           onChange={(e) => setUserId(e.target.value)}
@@ -50,7 +50,7 @@ export default function AddUser() {
 
         <input
           type='text'
-          placeholder='room1'
+          placeholder='johndoe'
           className='input'
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
@@ -59,7 +59,7 @@ export default function AddUser() {
 
         <input
           type='text'
-          placeholder='room1'
+          placeholder='johndoe@gmail.com'
           className='input'
           value={userEmail}
           onChange={(e) => setUserEmail(e.target.value)}

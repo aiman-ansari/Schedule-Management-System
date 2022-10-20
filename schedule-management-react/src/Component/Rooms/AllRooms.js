@@ -26,7 +26,7 @@ export default function AllRooms() {
               <td>
                 <div className='operations'>
                   <button className='bg-primary' onClick={() => editRoom(item)}>
-                    <i className='bi bi-heart'></i>
+                    <i className='bi bi-pencil-square'></i>
                   </button>
                   <button
                     className='bg-secondary'

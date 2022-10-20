@@ -11,23 +11,26 @@ export default function Rooms() {
       {open ? (
         <UpdateRoom user={data} />
       ) : (
-        <div className='container'>
+        <div className='mt-2'>
           {openAddroom ? (
             <div className='room-container'>
               <AddRoom />
             </div>
           ) : (
-            <div className='section'>
-              <p>List of all rooms</p>
-              <button
-                className='btn btn-primary'
-                onClick={() => setOpenAddroom(true)}
-              >
-                Add Room
-              </button>
-            </div>
+            <>
+              <div className='section'>
+                <p>List of all rooms</p>
+                <button
+                  className='btn btn-primary'
+                  onClick={() => setOpenAddroom(true)}
+                >
+                  Add Room
+                </button>
+              </div>
+
+              <AllRooms />
+            </>
           )}
-          <AllRooms />
         </div>
       )}
       <ToastContainer />

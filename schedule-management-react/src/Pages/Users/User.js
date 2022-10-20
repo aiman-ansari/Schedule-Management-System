@@ -12,23 +12,26 @@ export default function User() {
       {open ? (
         <UpdateUser user={data} />
       ) : (
-        <div className='container'>
+        <div className='mt-2'>
           {openAdduser ? (
             <div className='room-container'>
               <AddUser />
             </div>
           ) : (
-            <div className='section'>
-              <p>List of all users</p>
-              <button
-                className='btn btn-primary'
-                onClick={() => setOpenAdduser(true)}
-              >
-                Add User
-              </button>
-            </div>
+            <>
+              <div className='section'>
+                <p>List of all users</p>
+                <button
+                  className='btn btn-primary ml-5'
+                  onClick={() => setOpenAdduser(true)}
+                >
+                  Add User
+                </button>
+              </div>
+
+              <AllUsers />
+            </>
           )}
-          <AllUsers />
         </div>
       )}
       <ToastContainer />

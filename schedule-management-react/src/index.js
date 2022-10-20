@@ -7,13 +7,16 @@ import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter } from "react-router-dom";
 import { RoomContextProvider } from "./Context/RoomContext";
 import { UserContextProvider } from "./Context/UserContext";
+import { MeetingContextProvider } from "./Context/MeetingContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <RoomContextProvider>
         <UserContextProvider>
-          <App />
+          <MeetingContextProvider>
+            <App />
+          </MeetingContextProvider>
         </UserContextProvider>
       </RoomContextProvider>
     </BrowserRouter>

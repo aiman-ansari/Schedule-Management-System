@@ -16,7 +16,7 @@ export default function Header() {
           <Link to='/rooms'>Rooms</Link>
         </li>
         <li>
-          <a href='#'>Meetings </a>
+          <a href='/meeting'>Meetings </a>
         </li>
       </ul>
     </nav>
