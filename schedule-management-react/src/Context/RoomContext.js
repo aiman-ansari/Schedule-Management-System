@@ -6,10 +6,11 @@ const RoomContextProvider = ({ children }) => {
   const [rooms, setRooms] = useState(null);
   const [open, setOpen] = useState(false);
   const [data, setData] = useState("");
+  const [openAddroom, setOpenAddroom] = useState(false);
 
   useEffect(() => {
     getRooms();
-  }, []);
+  }, [rooms]);
   const getRooms = async () => {
     const res = await axios.get("/api/v1/room/get-all-rooms");
     console.log(res);
@@ -57,6 +58,8 @@ const RoomContextProvider = ({ children }) => {
         updateRoom,
         data,
         setData,
+        openAddroom,
+        setOpenAddroom,
       }}
     >
       {children}

@@ -6,6 +6,7 @@ export default function AllUsers() {
     setOpen(true);
     setData(item);
   };
+
   return (
     <div>
       {users !== null && users.length > 0 ? (

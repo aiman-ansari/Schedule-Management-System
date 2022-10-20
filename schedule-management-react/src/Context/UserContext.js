@@ -3,15 +3,16 @@ import axios from "axios";
 const UserContext = createContext();
 const useUser = () => useContext(UserContext);
 const UserContextProvider = ({ children }) => {
-  const [users, setUsers] = useState(null);
+  const [users, setUsers] = useState([]);
   const [open, setOpen] = useState(false);
   const [data, setData] = useState("");
-
+  const [openAdduser, setOpenAdduser] = useState(false);
   useEffect(() => {
     getUsers();
-  }, []);
+  }, [users]);
   const getUsers = async () => {
     const res = await axios.get("/api/v1/users/get-all-users");
+
     if (res.status === 409) {
       alert("OOPS!! something went wrong");
     }
@@ -19,7 +20,6 @@ const UserContextProvider = ({ children }) => {
       setUsers(res.data.data);
     }
   };
-  console.log("from context", users);
   const deleteUser = async (id) => {
     const res = await axios.delete(`/api/v1/users/${id}`);
     if (res.status === 409) {
@@ -57,6 +57,8 @@ const UserContextProvider = ({ children }) => {
         updateUser,
         data,
         setData,
+        openAdduser,
+        setOpenAdduser,
       }}
     >
       {children}

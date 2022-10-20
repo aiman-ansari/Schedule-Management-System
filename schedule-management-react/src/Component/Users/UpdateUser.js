@@ -6,7 +6,7 @@ export default function UpdateUser({ user }) {
   const { updateUser } = useUser();
 
   return (
-    <div>
+    <div className='room-container'>
       <div className='form-control'>
         <input
           type='text'

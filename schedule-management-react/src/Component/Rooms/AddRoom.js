@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
+import { useRoom } from "../../Context/RoomContext";
 export default function AddRoom() {
   const [roomId, setRoomId] = useState("");
   const [roomName, setRoomName] = useState("");
   const [isError, setIsError] = useState(false);
+  const { setOpenAddroom } = useRoom();
   const addRoom = async () => {
     if (roomId !== "" && roomName !== "") {
       setIsError(false);
@@ -22,6 +24,7 @@ export default function AddRoom() {
       }
       if (res.status === 200) {
         alert("successfully added");
+        setOpenAddroom(false);
       }
     } else {
       setIsError(true);

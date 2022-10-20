@@ -1,10 +1,11 @@
-import axios from "axios";
 import { useState } from "react";
+import { useUser } from "../../Context/UserContext";
 export default function AddUser() {
   const [userId, setUserId] = useState("");
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [isError, setIsError] = useState(false);
+  const { setOpenAdduser } = useUser();
   const addUser = async () => {
     if (userId !== "" && userName !== "" && userEmail !== "") {
       setIsError(false);
@@ -24,6 +25,7 @@ export default function AddUser() {
       }
       if (res.status === 200) {
         alert("successfully added");
+        setOpenAdduser(false);
       }
     } else {
       setIsError(true);
