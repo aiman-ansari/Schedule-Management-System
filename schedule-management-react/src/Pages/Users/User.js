@@ -3,6 +3,7 @@ import AddUser from "../../Component/Users/AddUser";
 import AllUsers from "../../Component/Users/AllUsers";
 import UpdateUser from "../../Component/Users/UpdateUser";
 import { useUser } from "../../Context/UserContext";
+import { ToastContainer } from "react-toastify";
 import "./User.css";
 export default function User() {
   const { data, open, openAdduser, setOpenAdduser } = useUser();
@@ -30,6 +31,7 @@ export default function User() {
           <AllUsers />
         </div>
       )}
+      <ToastContainer />
     </div>
   );
 }

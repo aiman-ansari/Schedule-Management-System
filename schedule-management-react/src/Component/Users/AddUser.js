@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useUser } from "../../Context/UserContext";
+import { toast } from "react-toastify";
 export default function AddUser() {
   const [userId, setUserId] = useState("");
   const [userName, setUserName] = useState("");
@@ -24,8 +25,11 @@ export default function AddUser() {
         alert("Room exists, change userId");
       }
       if (res.status === 200) {
-        alert("successfully added");
         setOpenAdduser(false);
+        toast.success("Successfully Added", {
+          theme: "colored",
+          autoClose: 2000,
+        });
       }
     } else {
       setIsError(true);

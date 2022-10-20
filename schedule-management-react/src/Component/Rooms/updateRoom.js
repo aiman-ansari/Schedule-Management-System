@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useRoom } from "../../Context/RoomContext";
 
-export default function UpdateRoom({ room }) {
-  const [data, setData] = useState(room);
+export default function UpdateRoom(room) {
+  const [data, setData] = useState(room.user);
   const { updateRoom } = useRoom();
-
   return (
     <div>
       <div className='form-control'>

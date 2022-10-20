@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useRoom } from "../../Context/RoomContext";
+import { toast } from "react-toastify";
 export default function AddRoom() {
   const [roomId, setRoomId] = useState("");
   const [roomName, setRoomName] = useState("");
@@ -20,11 +21,17 @@ export default function AddRoom() {
         }),
       });
       if (res.status === 409) {
-        alert("Room exists, change roomId");
+        toast.error("Room exist change room ID", {
+          theme: "colored",
+          autoClose: 2000,
+        });
       }
       if (res.status === 200) {
-        alert("successfully added");
         setOpenAddroom(false);
+        toast.info("Room added successfully", {
+          theme: "colored",
+          autoClose: 2000,
+        });
       }
     } else {
       setIsError(true);
