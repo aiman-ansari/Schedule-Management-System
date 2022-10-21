@@ -7,7 +7,7 @@
     "start": "node server.js",
     "swagger-autogen": "node docs/swagger-autogen.js",
     "dev": "nodemon",
-    "heroku-postbuild": "cd schedule-management-react && npm install && npm run build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix schedule-management-react && npm run build --prefix schedule-management-react"
   },
   "bugs": {
     "url": "https://github.com/growthpal/fe-assignment/issues"
