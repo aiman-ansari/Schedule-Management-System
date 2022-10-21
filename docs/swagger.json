@@ -7,16 +7,11 @@
   },
   "host": "localhost:3000",
   "basePath": "/",
-  "schemes": [
-    "http",
-    "https"
-  ],
+  "schemes": ["http", "https"],
   "paths": {
     "/api/v1/users/add-user": {
       "post": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "description": "Endpoint for creating new user",
         "parameters": [
           {
@@ -39,9 +34,7 @@
     },
     "/api/v1/users/get-all-users": {
       "get": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "description": "Endpoint for fetching all users",
         "parameters": [],
         "responses": {
@@ -53,9 +46,7 @@
     },
     "/api/v1/users/{userId}": {
       "get": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "description": "Endpoint for fetching a user by ID",
         "parameters": [
           {
@@ -72,9 +63,7 @@
         }
       },
       "put": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "description": "Endpoint for Updating a user by ID",
         "parameters": [
           {
@@ -101,9 +90,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "User"
-        ],
+        "tags": ["User"],
         "description": "Endpoint for deleting a user by ID",
         "parameters": [
           {
@@ -122,9 +109,7 @@
     },
     "/api/v1/room/add-room": {
       "post": {
-        "tags": [
-          "Rooms"
-        ],
+        "tags": ["Rooms"],
         "description": "Endpoint for creating new room",
         "parameters": [
           {
@@ -147,9 +132,7 @@
     },
     "/api/v1/room/get-all-rooms": {
       "get": {
-        "tags": [
-          "Rooms"
-        ],
+        "tags": ["Rooms"],
         "description": "Endpoint for fetching all rooms",
         "parameters": [],
         "responses": {
@@ -161,9 +144,7 @@
     },
     "/api/v1/room/{roomId}": {
       "get": {
-        "tags": [
-          "Rooms"
-        ],
+        "tags": ["Rooms"],
         "description": "Endpoint for fetching a room by ID",
         "parameters": [
           {
@@ -180,9 +161,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Rooms"
-        ],
+        "tags": ["Rooms"],
         "description": "Endpoint for Updating a room by ID",
         "parameters": [
           {
@@ -209,9 +188,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Rooms"
-        ],
+        "tags": ["Rooms"],
         "description": "Endpoint for deleting a room by ID",
         "parameters": [
           {
@@ -230,9 +207,7 @@
     },
     "/api/v1/schedule/create-meeting": {
       "post": {
-        "tags": [
-          "Meeting"
-        ],
+        "tags": ["Meeting"],
         "description": "Endpoint for creating new meeting",
         "parameters": [
           {
@@ -270,9 +245,7 @@
     },
     "/api/v1/schedule/get-meetings/user": {
       "get": {
-        "tags": [
-          "Meeting"
-        ],
+        "tags": ["Meeting"],
         "description": "Endpoint for fetching all meetings by UserID",
         "parameters": [
           {
@@ -303,9 +276,7 @@
     },
     "/api/v1/schedule/get-meetings/room": {
       "get": {
-        "tags": [
-          "Meeting"
-        ],
+        "tags": ["Meeting"],
         "description": "Endpoint for fetching all meetings by RoomID",
         "parameters": [
           {
@@ -349,10 +320,7 @@
         },
         "guestUsers": {
           "type": "array",
-          "example": [
-            "U2",
-            "U4"
-          ],
+          "example": ["U2", "U4"],
           "items": {
             "type": "string"
           }
@@ -370,13 +338,7 @@
           "example": "12:35"
         }
       },
-      "required": [
-        "userId",
-        "roomId",
-        "meetingDate",
-        "startTime",
-        "endTime"
-      ]
+      "required": ["userId", "roomId", "meetingDate", "startTime", "endTime"]
     },
     "user": {
       "type": "object",
@@ -394,9 +356,7 @@
           "example": "yash@growthpal.com"
         }
       },
-      "required": [
-        "userId"
-      ]
+      "required": ["userId"]
     },
     "updateUser": {
       "type": "object",
@@ -423,9 +383,7 @@
           "example": "Main Conference Room"
         }
       },
-      "required": [
-        "roomId"
-      ]
+      "required": ["roomId"]
     },
     "updateRoom": {
       "type": "object",
