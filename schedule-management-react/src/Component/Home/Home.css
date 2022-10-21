@@ -1,0 +1,15 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  flex-direction: column;
+}
+.content {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.text-gray {
+  font-size: 1.2rem;
+  color: rgb(46, 46, 46);
+}
