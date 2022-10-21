@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "swagger-autogen": "node docs/swagger-autogen.js",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "heroku-postbuild": "cd schedule-management-react && npm install && npm run build"
   },
   "bugs": {
     "url": "https://github.com/growthpal/fe-assignment/issues"
